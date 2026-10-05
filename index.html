@@ -1,0 +1,51 @@
+<script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Your existing SpendWise content goes here -->
+
+    <script src="script.js"></script>
+</body>
+</html>
+// SpendWise JavaScript
+
+// Variables
+let budget = 50000;
+let totalExpenses = 0;
+
+// Store expenses
+let expenses = [];
+
+// Function to calculate the remaining budget
+function calculateRemainingBudget() {
+    return budget - totalExpenses;
+}
+
+// Function to add an expense
+function addExpense(name, amount, category) {
+    let expense = {
+        name: name,
+        amount: amount,
+        category: category
+    };
+
+    expenses.push(expense);
+
+    totalExpenses = totalExpenses + amount;
+
+    console.log("Expense added:", expense);
+    console.log("Total expenses:", totalExpenses);
+    console.log("Remaining budget:", calculateRemainingBudget());
+}
+
+// Example test
+addExpense("Groceries", 3000, "Food");
+addExpense("Bus fare", 1000, "Transport");

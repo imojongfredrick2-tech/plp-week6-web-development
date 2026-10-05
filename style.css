@@ -1,0 +1,263 @@
+
+/* ========================================
+SpendWise - Main Stylesheet
+======================================== */
+
+/* CSS Variables */
+:root {
+	--brand: #2563eb;
+	--accent: #16a34a;
+	--background: #f4f7fb;
+	--surface: #ffffff;
+	--primary: #1f2937;
+	--secondary: #6b7280;
+	--border: #e5e7eb;
+}
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Body */
+body {
+	font-family: Arial, sans-serif;
+	background-color: var(--background);
+	color: var(--primary);
+	line-height: 1.6;
+}
+
+/* Main Layout */
+.dashboard {
+	display: grid;
+	grid-template-columns: 240px 1fr;
+	min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+	background-color: var(--surface);
+	border-right: 1px solid var(--border);
+	padding: 25px 20px;
+}
+
+.logo {
+	color: var(--brand);
+	font-size: 24px;
+	margin-bottom: 35px;
+}
+
+.nav {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.nav a {
+	text-decoration: none;
+	color: var(--secondary);
+	padding: 12px 15px;
+	border-radius: 8px;
+	transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+	background-color: var(--brand);
+	color: white;
+}
+
+/* Main Content */
+.main-content {
+	padding: 30px;
+}
+
+/* Header */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.header h1 {
+	font-size: 30px;
+	margin-bottom: 5px;
+}
+
+.header p {
+	color: var(--secondary);
+}
+
+/* Cards */
+.cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-bottom: 30px;
+}
+
+.card {
+	background-color: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 22px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+	color: var(--secondary);
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.card .amount {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+/* Expense Categories */
+.expense-categories {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.category-card {
+	background-color: var(--surface);
+	padding: 20px;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+}
+
+.category-card h3 {
+	margin-bottom: 8px;
+}
+
+.category-card p {
+	color: var(--secondary);
+}
+
+/* Expense Form */
+.expense-form {
+	background-color: var(--surface);
+	padding: 25px;
+	border-radius: 12px;
+	border: 1px solid var(--border);
+	margin-top: 30px;
+}
+
+.expense-form h2 {
+	margin-bottom: 20px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+	padding: 11px;
+	border: 1px solid var(--border);
+	border-radius: 7px;
+	font-size: 15px;
+}
+
+/* Buttons */
+button {
+	background-color: var(--brand);
+	color: white;
+	border: none;
+	padding: 11px 20px;
+	border-radius: 7px;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+button:hover {
+	opacity: 0.9;
+}
+
+/* Tables */
+.expense-table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--surface);
+	margin-top: 30px;
+}
+
+.expense-table th,
+.expense-table td {
+	padding: 14px;
+	border-bottom: 1px solid var(--border);
+	text-align: left;
+}
+
+.expense-table th {
+	background-color: var(--brand);
+	color: white;
+}
+
+.expense-table tr:nth-child(even) {
+	background-color: #f9fafb;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+	.dashboard {
+		grid-template-columns: 1fr;
+	}
+
+	.sidebar {
+		border-right: none;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.nav {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.expense-categories {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.main-content {
+		padding: 20px;
+	}
+
+	.header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.cards,
+	.expense-categories {
+		grid-template-columns: 1fr;
+	}
+
+	.expense-table {
+		font-size: 14px;
+	}
+
+	.expense-table th,
+	.expense-table td {
+		padding: 9px;
+	}
+}
